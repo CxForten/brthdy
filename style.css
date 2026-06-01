@@ -285,3 +285,40 @@ h1{
     color:#fff;
 }
 .audio-toggle:focus{ outline:2px solid #ff9eb5; outline-offset:2px; }
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .container{ padding:40px 16px; }
+    h1{ font-size:2.4rem; }
+    #countdown{ font-size:1.6rem; padding:16px 30px; }
+    #dailyContent p{ font-size:1.45rem; }
+    #giftButton{ padding:12px 22px; font-size:1rem; }
+    .spinner{ width:44px; height:44px; border-width:5px; }
+}
+
+@media (max-width: 600px) {
+    .container{ width:95%; padding:30px 14px; }
+    h1{ font-size:2rem; margin-bottom:20px; }
+    #countdown{ font-size:1.25rem; padding:12px 22px; border-radius:20px; }
+    #dailyContent{ padding:20px; }
+    #dailyContent p{ font-size:1.25rem; }
+    #dailyContent img, #dailyContent video{ max-width:100%; height:auto; }
+    #giftButton{ padding:10px 18px; border-radius:16px; }
+    .audio-toggle{ right:12px; bottom:12px; padding:8px 10px; font-size:16px; }
+}
+
+@media (max-width: 420px) {
+    body{ font-size:15px; }
+    h1{ font-size:1.6rem; }
+    #countdown{ font-size:1rem; padding:10px 16px; }
+    #dailyContent p{ font-size:1.05rem; line-height:1.45; }
+    .container{ padding:22px 12px; }
+    .site-loaded .container::after{ display:none; }
+    #giftButton{ width:100%; padding:12px; font-size:1rem; }
+    #bg-video{ object-position:center top; }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
