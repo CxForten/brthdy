@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
         content.innerHTML = `
             <h2> Día 1</h2>
             <p>
-                Este es el comienzo de algo especial.
-                Cada día habrá una pequeña sorpresa esperándote.
+                A partir de hoy, faltan 29 días para naciera la mujer de mi vida y la razón de mi existir <br> <br>
+                <strong>Cuando este contador termine recibirá un regalo muy especial mi niña linda</strong>
             </p>
         `;
     }
