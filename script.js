@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (today.getDate() >= 0 && today.getDate() < 10) {
         content.innerHTML = `
-            <h2>❤️ Día 1</h2>
+            <h2> Día 1</h2>
             <p>
                 Este es el comienzo de algo especial.
                 Cada día habrá una pequeña sorpresa esperándote.
