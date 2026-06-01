@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+    <title>Para Mi Niña ❤️</title>
+</head>
+
+<body class="site-loading">
+
+    <!-- PRELOADER -->
+    <div id="preloader" aria-hidden="true">
+        <div class="spinner" aria-hidden="true"></div>
+    </div>
+
+    <!-- VIDEO DE FONDO -->
+    <video autoplay muted loop playsinline preload="auto" id="bg-video">
+        <source src="/background/flowers.mp4" type="video/mp4">
+    </video>
+
+    <!-- AUDIO DE FONDO: Heal Original Mix (loop). Añade /audio/heal-original-mix.mp3 en tu proyecto -->
+    <audio id="bg-audio" loop preload="auto">
+        <source src="/Music/Heal (Original Mix) - Pentagon.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+
+    <!-- CAPA ROSA TRANSLÚCIDA -->
+    <div class="overlay"></div>
+
+    <div class="container">
+
+        <h1>MI NIÑA LINDA CUMPLE EN:</h1>
+
+        <div id="countdown"></div>
+
+        <!-- CONTENIDO QUE IRÁS AÑADIENDO -->
+        <section id="dailyContent">
+
+
+            <p>
+                A partir de hoy, faltan 29 días para naciera la mujer de mi vida y la razón de mi existir <br> <br>
+                <strong>Cuando este contador termine recibirá un regalo muy especial mi niña linda</strong>
+            </p>
+
+            <!-- FOTO OPCIONAL -->
+            <!-- <img src="foto1.jpeg" alt="Nuestro recuerdo"> -->
+
+            <!-- VIDEO OPCIONAL -->
+            <!--
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+            </video>
+            -->
+
+        </section>
+
+        <a href="regalo.html">
+            <button id="giftButton">
+                FELIZ CUMPLEAÑOS MI NIÑA LINDA ❤️
+            </button>
+        </a>
+
+    </div>
+
+    <!-- CONTROL DE AUDIO (se muestra si autoplay está bloqueado) -->
+    <button id="audioToggle" class="audio-toggle" aria-pressed="false" title="Reproducir música">🔈</button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
