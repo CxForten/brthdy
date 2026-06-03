@@ -48,12 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (today.getDate() >= 0 && today.getDate() < 10) {
         content.innerHTML = `
-            <h2>Día 2</h2>
+            <h2>Día 3</h2>
             <p>
-                UN PEQUEÑO AGREGADO A SU SORPRESA QUE ESTA POR VENIR PRONTO MI AMOR LINDO <br>
-                <strong>Por que jamás olvide que cada día que pasa la amo más que el día anterior <br>
-                y menos que el siguiente :D</strong>
-            </p>
+                AUNQUE PASE EL TIEMPO, AUNQUE PASEN LOS AÑOS <br>
+                <strong>Yo la seguiré amando como antaño, eterna y intensamente <br>
+                por que no hay mejor vida que la que estoy viviendo a su lado </strong>
+            </p> <br><br><br>
             <h2>RECUERDOS</h2>
 
             <div class="carousel" id="miniCarousel" aria-roledescription="carousel" tabindex="0">
@@ -82,44 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(initCarousel, 100);
     }
 
-    else if (today.getDate() >= 10 && today.getDate() < 20) {
-        content.innerHTML = `
-            <h2>📸 Un recuerdo</h2>
-
-            <div class="carousel" id="miniCarousel" aria-roledescription="carousel" tabindex="0">
-                <div class="carousel-track">
-                    <div class="carousel-slide"><img src="Photos/amorcito-mejorado.jpg" alt="Recuerdo 1" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
-                    <div class="carousel-slide"><img src="Photos/Imagen de WhatsApp 2025-06-06 a las 12.04.15_fc78ef69.jpg" alt="Recuerdo 2" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
-                    <div class="carousel-slide"><img src="Photos/IMG-20240130-WA0160.png" alt="Recuerdo 3" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
-                </div>
-                <button class="carousel-btn prev" aria-label="Anterior">‹</button>
-                <button class="carousel-btn next" aria-label="Siguiente">›</button>
-                <div class="carousel-dots" role="tablist"></div>
-            </div>
-
-            <p>
-                Una de mis fotos favoritas contigo.
-            </p>
-        `;
-
-        // Inicializar carrusel (definido más abajo)
-        
-    }
-
-    else if (today.getDate() >= 20 && today.getDate() < 30) {
-        content.innerHTML = `
-            <h2>🎥 Algo para ti</h2>
-
-            <video width="500" controls>
-                <source src="video.mp4" type="video/mp4">
-            </video>
-
-            <p>
-                Ya falta muy poco...
-            </p>
-        `;
-    }
-
+    
+   
     // Cuando el video de fondo esté listo, quitar preloader y animar entrada
     const bgVideo = document.getElementById('bg-video');
     const preloader = document.getElementById('preloader');
