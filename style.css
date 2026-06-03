@@ -182,6 +182,28 @@ h1{
     line-height:1.6;
 }
 
+/* Mini carrusel */
+.carousel{ position:relative; max-width:700px; margin:20px auto 0; overflow:hidden; border-radius:14px; }
+.carousel-track{ display:flex; transition:transform .6s cubic-bezier(.2,.9,.2,1); width:100%; }
+.carousel-slide{ min-width:100%; flex:0 0 100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(180deg,#fff,#fff0); }
+.carousel-slide img{ width:100%; height:auto; display:block; max-height:460px; object-fit:cover; border-radius:14px; }
+.carousel-btn{ position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.86); border:none; width:44px; height:44px; border-radius:50%; box-shadow:0 8px 20px rgba(0,0,0,0.08); cursor:pointer; font-size:22px; line-height:1; }
+.carousel-btn.prev{ left:12px; }
+.carousel-btn.next{ right:12px; }
+.carousel-dots{ position:absolute; left:50%; transform:translateX(-50%); bottom:10px; display:flex; gap:8px; }
+.dot{ width:10px; height:10px; background:rgba(255,255,255,0.8); border-radius:50%; border:none; cursor:pointer; padding:0; }
+.dot.active{ background:#ff9eb5; box-shadow:0 6px 12px rgba(255,120,160,0.12); }
+
+@media (max-width:700px){
+    .carousel{ max-width:520px; }
+    .carousel-slide img{ max-height:360px; }
+}
+
+@media (max-width:420px){
+    .carousel{ max-width:100%; border-radius:12px; }
+    .carousel-btn{ width:38px; height:38px; }
+}
+
 #dailyContent img{
     margin-top:20px;
     width:100%;

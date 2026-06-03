@@ -48,25 +48,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (today.getDate() >= 0 && today.getDate() < 10) {
         content.innerHTML = `
-            <h2> Día 1</h2>
+            <h2>Día 2</h2>
             <p>
-                A partir de hoy, faltan 29 días para naciera la mujer de mi vida y la razón de mi existir <br> <br>
-                <strong>Cuando este contador termine recibirá un regalo muy especial mi niña linda</strong>
+                UN PEQUEÑO AGREGADO A SU SORPRESA QUE ESTA POR VENIR PRONTO MI AMOR LINDO <br>
+                <strong>Por que jamás olvide que cada día que pasa la amo más que el día anterior <br>
+                y menos que el siguiente :D</strong>
+            </p>
+            <h2>RECUERDOS</h2>
+
+            <div class="carousel" id="miniCarousel" aria-roledescription="carousel" tabindex="0">
+                <div class="carousel-track">
+                    <div class="carousel-slide"><img src="Photos/photo1.jpg" alt="Recuerdo 1" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
+                    <div class="carousel-slide"><img src="Photos/photo2.jpg" alt="Recuerdo 2" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
+                    <div class="carousel-slide"><img src="Photos/photo3.jpg" alt="Recuerdo 3" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
+                    <div class="carousel-slide"><img src="Photos/photo 4.jpg" alt="Recuerdo 1" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
+                    <div class="carousel-slide"><img src="Photos/photo 5.jpg" alt="Recuerdo 2" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>                    <div class="carousel-slide"><img src="Photos/photo 7.jpg" alt="Recuerdo 1" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
+                    <div class="carousel-slide"><img src="Photos/photo 8.jpg" alt="Recuerdo 2" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
+                    <div class="carousel-slide"><img src="Photos/photo 9.jpg" alt="Recuerdo 3" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
+                    <div class="carousel-slide"><img src="Photos/photo 10.jpg" alt="Recuerdo 1" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
+                    <div class="carousel-slide"><img src="Photos/photo 11.jpg" alt="Recuerdo 2" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
+                    <div class="carousel-slide"><img src="Photos/photo 12.jpg" alt="Recuerdo 3" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
+                    
+                </div>
+                <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+                <button class="carousel-btn next" aria-label="Siguiente">›</button>
+                <div class="carousel-dots" role="tablist"></div>
+            </div>
+
+            <p>
+                ALGUNAS FOTOS DE MUCHOS TIEMPOS JUNTOS MI NIÑA LINDA <3
             </p>
         `;
+        setTimeout(initCarousel, 100);
     }
 
     else if (today.getDate() >= 10 && today.getDate() < 20) {
         content.innerHTML = `
             <h2>📸 Un recuerdo</h2>
 
-            <img src="foto1.jpg"
-                 style="max-width:500px;border-radius:15px;">
+            <div class="carousel" id="miniCarousel" aria-roledescription="carousel" tabindex="0">
+                <div class="carousel-track">
+                    <div class="carousel-slide"><img src="Photos/amorcito-mejorado.jpg" alt="Recuerdo 1" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
+                    <div class="carousel-slide"><img src="Photos/Imagen de WhatsApp 2025-06-06 a las 12.04.15_fc78ef69.jpg" alt="Recuerdo 2" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
+                    <div class="carousel-slide"><img src="Photos/IMG-20240130-WA0160.png" alt="Recuerdo 3" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
+                </div>
+                <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+                <button class="carousel-btn next" aria-label="Siguiente">›</button>
+                <div class="carousel-dots" role="tablist"></div>
+            </div>
 
             <p>
                 Una de mis fotos favoritas contigo.
             </p>
         `;
+
+        // Inicializar carrusel (definido más abajo)
+        
     }
 
     else if (today.getDate() >= 20 && today.getDate() < 30) {
@@ -170,3 +207,59 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+// --- CARRUSEL ---
+function initCarousel(){
+    const carousel = document.getElementById('miniCarousel');
+    if (!carousel) return;
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+    const prevBtn = carousel.querySelector('.carousel-btn.prev');
+    const nextBtn = carousel.querySelector('.carousel-btn.next');
+    const dotsWrap = carousel.querySelector('.carousel-dots');
+
+    let current = 0;
+    let autoplayInterval = null;
+    const slideCount = slides.length;
+
+    slides.forEach((s, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'dot';
+        dot.setAttribute('aria-label', 'Ir a imagen ' + (i+1));
+        dot.addEventListener('click', () => { goTo(i); resetAutoplay(); });
+        dotsWrap.appendChild(dot);
+    });
+
+    const dots = Array.from(dotsWrap.querySelectorAll('.dot'));
+
+    function update(){
+        const offset = -current * 100;
+        track.style.transform = `translateX(${offset}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i===current));
+    }
+
+    function goTo(idx){ current = (idx + slideCount) % slideCount; update(); }
+    function next(){ goTo(current+1); }
+    function prev(){ goTo(current-1); }
+
+    nextBtn.addEventListener('click', ()=>{ next(); resetAutoplay(); });
+    prevBtn.addEventListener('click', ()=>{ prev(); resetAutoplay(); });
+
+    function startAutoplay(){ autoplayInterval = setInterval(()=>{ next(); }, 3600); }
+    function stopAutoplay(){ if (autoplayInterval) { clearInterval(autoplayInterval); autoplayInterval = null; } }
+    function resetAutoplay(){ stopAutoplay(); startAutoplay(); }
+
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+
+    // swipe support
+    let startX=0, isDown=false, lastTranslate=0;
+    const threshold=100;
+    carousel.addEventListener('touchstart', (e)=>{ isDown=true; startX = e.touches[0].clientX; stopAutoplay(); lastTranslate = -current * carousel.offsetWidth; });
+    carousel.addEventListener('touchmove', (e)=>{ if(!isDown) return; const dx = e.touches[0].clientX - startX; track.style.transition='none'; track.style.transform = `translateX(${lastTranslate + dx}px)`; });
+    carousel.addEventListener('touchend', (e)=>{ if(!isDown) return; isDown=false; const dx = e.changedTouches[0].clientX - startX; track.style.transition=''; if (dx > threshold) prev(); else if (dx < -threshold) next(); else update(); startAutoplay(); });
+
+    carousel.addEventListener('keydown', (e)=>{ if (e.key==='ArrowLeft') prev(); if (e.key==='ArrowRight') next(); });
+
+    goTo(0); startAutoplay();
+}
