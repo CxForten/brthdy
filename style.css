@@ -185,7 +185,7 @@ h1{
 /* Mini carrusel */
 .carousel{ position:relative; max-width:700px; margin:20px auto 0; overflow:hidden; border-radius:14px; }
 .carousel-track{ display:flex; transition:transform .6s cubic-bezier(.2,.9,.2,1); width:100%; }
-.carousel-slide{ min-width:100%; flex:0 0 100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(180deg,#fff,#fff0); }
+.carousel-slide{ min-width:100%; flex:0 0 100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(180deg,#000000,rgba(0, 0, 0, 0)); }
 .carousel-slide img{ width:100%; height:auto; display:block; max-height:460px; object-fit:cover; border-radius:14px; }
 .carousel-btn{ position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.86); border:none; width:44px; height:44px; border-radius:50%; box-shadow:0 8px 20px rgba(0,0,0,0.08); cursor:pointer; font-size:22px; line-height:1; }
 .carousel-btn.prev{ left:12px; }
@@ -293,7 +293,7 @@ h1{
     right:18px;
     bottom:18px;
     z-index:10010;
-    background:rgba(255,255,255,0.92);
+    background:rgba(0, 0, 0, 0.92);
     border: none;
     padding:10px 12px;
     border-radius:12px;

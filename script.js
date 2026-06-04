@@ -41,44 +41,60 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     }, 1000);
-
+        // Generar carrusel dinámicamente a partir de una lista única de imágenes reales
     const content = document.getElementById("dailyContent");
 
     const today = new Date();
 
     if (today.getDate() >= 0 && today.getDate() < 10) {
         content.innerHTML = `
-            <h2>Día 3</h2>
+            <h2>Día 4: NUESTRO ANIVERSARIO ESPECIAL !!!</h2>
             <p>
-                AUNQUE PASE EL TIEMPO, AUNQUE PASEN LOS AÑOS <br>
-                <strong>Yo la seguiré amando como antaño, eterna y intensamente <br>
-                por que no hay mejor vida que la que estoy viviendo a su lado </strong>
-            </p> <br><br><br>
-            <h2>RECUERDOS</h2>
+                Mi niña linda, hoy es otro día menos para su cumpleaños, pero también hoy <br>
+                cumplimos 3 años, 3 años desde ese hermoso día donde aceptó ser el amor de mi vida.<br>
+                GRACIAS por tantos lindos recuerdos mi princesa hermosa, y por soportarme tanto mi niña linda <br>
+                TE AMOOOOOOOOOOOOOOOO MUCHO MUCHO MUCHO MUCHO MUCHO MUCHO MUCHO <br>
+                 MUCHO MUCHO MUCHO MUCHO MUCHO MUCHO MUCHO MUCHO MUCHO MUCHO MUCHO <br>
+                 MI PRINCESA PRECIOSA, MI AMOR COMPLETO, MI TODO <3
+            </p>
+            <br><br><br>
+            <h2>FELICES 3 AÑOS MI PRINCESA PRECIOSA</h2>
 
             <div class="carousel" id="miniCarousel" aria-roledescription="carousel" tabindex="0">
-                <div class="carousel-track">
-                    <div class="carousel-slide"><img src="Photos/photo1.jpg" alt="Recuerdo 1" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
-                    <div class="carousel-slide"><img src="Photos/photo2.jpg" alt="Recuerdo 2" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
-                    <div class="carousel-slide"><img src="Photos/photo3.jpg" alt="Recuerdo 3" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
-                    <div class="carousel-slide"><img src="Photos/photo 4.jpg" alt="Recuerdo 1" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
-                    <div class="carousel-slide"><img src="Photos/photo 5.jpg" alt="Recuerdo 2" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>                    <div class="carousel-slide"><img src="Photos/photo 7.jpg" alt="Recuerdo 1" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
-                    <div class="carousel-slide"><img src="Photos/photo 8.jpg" alt="Recuerdo 2" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
-                    <div class="carousel-slide"><img src="Photos/photo 9.jpg" alt="Recuerdo 3" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
-                    <div class="carousel-slide"><img src="Photos/photo 10.jpg" alt="Recuerdo 1" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
-                    <div class="carousel-slide"><img src="Photos/photo 11.jpg" alt="Recuerdo 2" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
-                    <div class="carousel-slide"><img src="Photos/photo 12.jpg" alt="Recuerdo 3" loading="lazy" onerror="this.src='Photos/amorcito-mejorado.jpg'"></div>
-                    
-                </div>
+                <div class="carousel-track"></div>
                 <button class="carousel-btn prev" aria-label="Anterior">‹</button>
                 <button class="carousel-btn next" aria-label="Siguiente">›</button>
                 <div class="carousel-dots" role="tablist"></div>
             </div>
-
-            <p>
-                ALGUNAS FOTOS DE MUCHOS TIEMPOS JUNTOS MI NIÑA LINDA <3
-            </p>
         `;
+
+        // Lista conocida de imágenes (ajustada a los nombres reales en Photos/)
+        const photos = [
+            'photo 1.jpg','photo2.jpg','photo 3.jpg','photo 4.jpg','photo 5.jpg',
+            'photo 6.jpg','photo 10.jpg','photo 11.jpg','photo 12.jpg','photo 13.jpg',
+            'photo 14.jpg','photo 15.jpg','photo 16.jpg','photo 17.jpg','photo 18.jpg'
+        ];
+
+        // Extraer número para ordenar de forma natural; no num -> al final
+        const extractNum = name => { const m = name.match(/(\d+)/); return m ? parseInt(m[0],10) : 9999; };
+        photos.sort((a,b)=> extractNum(a) - extractNum(b));
+
+        // Eliminar duplicados accidentalmente presentes
+        const unique = Array.from(new Set(photos));
+
+        const track = document.querySelector('#miniCarousel .carousel-track');
+        unique.forEach(fname => {
+            const slide = document.createElement('div');
+            slide.className = 'carousel-slide';
+            const img = document.createElement('img');
+            img.src = 'Photos/' + fname;
+            img.alt = fname.replace(/\.jpg$/i,'');
+            img.loading = 'lazy';
+            img.onerror = function(){ this.src = 'Photos/amorcito-mejorado.jpg'; };
+            slide.appendChild(img);
+            track.appendChild(slide);
+        });
+
         setTimeout(initCarousel, 100);
     }
 
