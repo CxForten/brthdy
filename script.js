@@ -48,17 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (today.getDate() >= 0 && today.getDate() < 10) {
         content.innerHTML = `
-            <h2>Día 4: NUESTRO ANIVERSARIO ESPECIAL !!!</h2>
+            <h2>Día 6</h2>
             <p>
-                Mi niña linda, hoy es otro día menos para su cumpleaños, pero también hoy <br>
-                cumplimos 3 años, 3 años desde ese hermoso día donde aceptó ser el amor de mi vida.<br>
-                GRACIAS por tantos lindos recuerdos mi princesa hermosa, y por soportarme tanto mi niña linda <br>
-                TE AMOOOOOOOOOOOOOOOO MUCHO MUCHO MUCHO MUCHO MUCHO MUCHO MUCHO <br>
-                 MUCHO MUCHO MUCHO MUCHO MUCHO MUCHO MUCHO MUCHO MUCHO MUCHO MUCHO <br>
-                 MI PRINCESA PRECIOSA, MI AMOR COMPLETO, MI TODO <3
+                Se que muchas veces peleamos mi aor lindo, y que tenemos malos ratos <br>
+                pero siempre la seguiré amando y eligiendo primero a usted mi amor precioso <br>
+                Mi casi cumpleañera preciosa la amo demasiado <3
             </p>
-            <br><br><br>
-            <h2>FELICES 3 AÑOS MI PRINCESA PRECIOSA</h2>
+            <br>
 
             <div class="carousel" id="miniCarousel" aria-roledescription="carousel" tabindex="0">
                 <div class="carousel-track"></div>
