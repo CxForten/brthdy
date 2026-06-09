@@ -48,9 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (today.getDate() >= 0 && today.getDate() < 10) {
         content.innerHTML = `
-            <h2>Día 6</h2>
+            <h2>Día 9</h2>
             <p>
-                Se que muchas veces peleamos mi aor lindo, y que tenemos malos ratos <br>
+                Se que muchas veces peleamos mi amor lindo, y que tenemos malos ratos <br>
                 pero siempre la seguiré amando y eligiendo primero a usted mi amor precioso <br>
                 Mi casi cumpleañera preciosa la amo demasiado <3
             </p>
