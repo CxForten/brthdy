@@ -46,16 +46,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const today = new Date();
 
-    if (today.getDate() >= 0 && today.getDate() < 10) {
+    // Mostrar mensaje especial el 11 de junio (y también el día anterior para vista previa)
+    if (today.getMonth() === 5 && (today.getDate() ===56| today.getDate() === 11)) {
         content.innerHTML = `
-            <h2>Día 9</h2>
+            <h2>Día 11</h2>
             <p>
-                Se que muchas veces peleamos mi amor lindo, y que tenemos malos ratos <br>
-                pero siempre la seguiré amando y eligiendo primero a usted mi amor precioso <br>
-                Mi casi cumpleañera preciosa la amo demasiado <3
+                La amo hoy, la amo mñana y la amo siempre mi niña bella <br>
+                Ya faltan pocos dias para su cumple mi princesa preciosa <br>
+                Mi amor por usted es tan grande que no me alcanza la vida para demostrárselo <br>
+                La amo con toda mi ser mi amor precioso
             </p>
             <br>
 
+            
             <div class="carousel" id="miniCarousel" aria-roledescription="carousel" tabindex="0">
                 <div class="carousel-track"></div>
                 <button class="carousel-btn prev" aria-label="Anterior">‹</button>
@@ -91,7 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
             track.appendChild(slide);
         });
 
-        setTimeout(initCarousel, 100);
+        if (unique.length > 0) {
+            setTimeout(initCarousel, 100);
+        } else {
+            console.warn('No hay imágenes para el carrusel');
+        }
     }
 
     
