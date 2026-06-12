@@ -47,9 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
 
     // Mostrar mensaje especial el 11 de junio (y también el día anterior para vista previa)
-    if (today.getMonth() === 5 && (today.getDate() ===56| today.getDate() === 11)) {
+    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 12)) {
         content.innerHTML = `
-            <h2>Día 11</h2>
+            <h2>Día 12</h2>
             <p>
                 La amo hoy, la amo mñana y la amo siempre mi niña bella <br>
                 Ya faltan pocos dias para su cumple mi princesa preciosa <br>
