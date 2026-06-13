@@ -47,14 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
 
     // Mostrar mensaje especial el 11 de junio (y también el día anterior para vista previa)
-    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 12)) {
+    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 13)) {
         content.innerHTML = `
-            <h2>Día 12</h2>
+            <h2>Día 13</h2>
             <p>
-                La amo hoy, la amo mñana y la amo siempre mi niña bella <br>
-                Ya faltan pocos dias para su cumple mi princesa preciosa <br>
-                Mi amor por usted es tan grande que no me alcanza la vida para demostrárselo <br>
-                La amo con toda mi ser mi amor precioso
+                Ya faltan 17 días para su cumpelaños mi niña bella <br>
+                Soy muy feliz de teneral en mi vida, y cada dia que la veo me pongo más y más feliz<br>
+                Ya quiero que sea su cumpleaños para pasar otro año más con mi princesa<br>
+                LA AMO Y AMARÉ ETERNAMENTE MI AMORCITO HERMOSO <3
             </p>
             <br>
 
