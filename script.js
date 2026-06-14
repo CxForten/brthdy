@@ -47,14 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
 
     // Mostrar mensaje especial el 11 de junio (y también el día anterior para vista previa)
-    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 13)) {
+    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 14)) {
         content.innerHTML = `
-            <h2>Día 13</h2>
+            <h2>Día 14</h2>
             <p>
-                Ya faltan 17 días para su cumpelaños mi niña bella <br>
-                Soy muy feliz de teneral en mi vida, y cada dia que la veo me pongo más y más feliz<br>
-                Ya quiero que sea su cumpleaños para pasar otro año más con mi princesa<br>
-                LA AMO Y AMARÉ ETERNAMENTE MI AMORCITO HERMOSO <3
+                Ya faltan 16 días para su cumpelaños mi princesa hermosa <br>
+                Le amo con todo mi corazón y cada día que pasa me doy cuenta de lo afortunado que soy de tenerla en mi vida. <br>
+                Es mi solcito mañanero en los días nublados, mi refugio en las tormentas y mi alegría constante. <br>
+                Amo cada parte de usted mi niña linda y no cambiaría nada <br>
+                NUCA SE VAYA DE MI LADO MI AMOR PRECIOSO
             </p>
             <br>
 
@@ -215,9 +216,12 @@ function initCarousel(){
 
     const dots = Array.from(dotsWrap.querySelectorAll('.dot'));
 
+    carousel.classList.add('carousel-initialized');
+
     function update(){
         const offset = -current * 100;
         track.style.transform = `translateX(${offset}%)`;
+        slides.forEach((slide, index) => slide.classList.toggle('active', index === current));
         dots.forEach((d, i) => d.classList.toggle('active', i===current));
     }
 
