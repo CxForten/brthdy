@@ -47,15 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
 
     // Mostrar mensaje especial el 11 de junio (y también el día anterior para vista previa)
-    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 14)) {
+    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 15)) {
         content.innerHTML = `
-            <h2>Día 14</h2>
+            <h2>Día 15</h2>
             <p>
-                Ya faltan 16 días para su cumpelaños mi princesa hermosa <br>
-                Le amo con todo mi corazón y cada día que pasa me doy cuenta de lo afortunado que soy de tenerla en mi vida. <br>
-                Es mi solcito mañanero en los días nublados, mi refugio en las tormentas y mi alegría constante. <br>
-                Amo cada parte de usted mi niña linda y no cambiaría nada <br>
-                NUCA SE VAYA DE MI LADO MI AMOR PRECIOSO
+                Ya faltan 17 días para su cumpelaños mi princesa hermosa <br>
+                Con usted me siento lleno me siento vivo, <br>
+                usted me lleva a otro mundo y a otra dimension, <br> 
+                solo con su mirada me hace recorrer tantos universos y tantas vidas mi niña bella, <br> 
+                usted me hace sentir cosas hermosas en mi corazoncito depollito y el siempre le va pertenecer amor <3
             </p>
             <br>
 
