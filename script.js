@@ -47,16 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
 
     // Mostrar mensaje especial el 11 de junio (y también el día anterior para vista previa)
-    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 16)) {
+    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 17)) {
         content.innerHTML = `
             <h2>Día 16</h2>
             <p>
-                Ya faltan 14 días para su cumpelaños mi princesa hermosa <br>
-                Con usted me siento lleno me siento vivo, <br>
-                usted me lleva a otro mundo y a otra dimension, <br> 
-                solo con su mirada me hace recorrer tantos universos y tantas vidas mi niña bella, <br> 
-                usted me hace sentir cosas hermosas en mi corazoncito depollito y el siempre le va pertenecer amor <3
-            </p>
+                Quiero que en estos días restantes sepa que gané en esta vida con usted <br>
+                Pronto se acerca su cumpleaños número 24 y lo que más quiero <br>
+                Es que estemos juntos y pase un cunpleaños feliz <br>
+                Mañana tendrá una más grande actualización la página así que esté pendiente <br>
+                LA AMA SU GORDO HERMOSO XoXo bshos y abrazos
+                </p>
             <br>
 
             
