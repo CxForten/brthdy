@@ -47,17 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
 
     // Mostrar mensaje especial el 11 de junio (y también el día anterior para vista previa)
-    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 17)) {
+    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 18)) {
         content.innerHTML = `
-            <h2>Día 16</h2>
+            <h2>Día 18</h2>
             <p>
-                Quiero que en estos días restantes sepa que gané en esta vida con usted <br>
-                Pronto se acerca su cumpleaños número 24 y lo que más quiero <br>
-                Es que estemos juntos y pase un cunpleaños feliz <br>
-                Mañana tendrá una más grande actualización la página así que esté pendiente <br>
-                LA AMA SU GORDO HERMOSO XoXo bshos y abrazos
-                </p>
-            <br>
+                Falltan 12 días para su cumpleaños amorcito <br>
+                Pronto cumple la niña más hermosa del mundo <br>
+                Cada día más y más cerca de el mejor día del año <br>
+                La amo demasiado mi amor precioso <3 <br>
+            </p>
+            
 
             
             <div class="carousel" id="miniCarousel" aria-roledescription="carousel" tabindex="0">
