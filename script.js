@@ -47,14 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
 
     // Mostrar mensaje especial el 11 de junio (y también el día anterior para vista previa)
-    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 18)) {
+    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 19)) {
         content.innerHTML = `
-            <h2>Día 18</h2>
+            <h2>Día 19</h2>
             <p>
-                Falltan 12 días para su cumpleaños amorcito <br>
-                Pronto cumple la niña más hermosa del mundo <br>
-                Cada día más y más cerca de el mejor día del año <br>
-                La amo demasiado mi amor precioso <3 <br>
+                Falltan 11 días para su cumpleaños amorcito <br>
+                Un día menos para el cumpleaños de la niña más hermosa del mundo <br>
+                Un día menos para el cumpleaños de la niña más hermosa del universo <br>
+                    Un día menos para el cumpleaños de la niña más hermosa del multiverso <br>
+                    TE AMOOOOOOOOOOOOOOOOO MI AMOR HERMOS <br>
             </p>
             
 
