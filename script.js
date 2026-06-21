@@ -47,11 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
 
     // Mostrar mensaje especial el 11 de junio (y también el día anterior para vista previa)
-    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 20)) {
+    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 21)) {
         content.innerHTML = `
-            <h2>Día 20</h2>
+            <h2>Día 21</h2>
             <p>
-                Falltan 10días para su cumpleaños amorcito <br>
+                Falltan 9 días para su cumpleaños amorcito <br>
                Mi amor hermoso estoy muy ferliz de anunciar que ya solo faltan <br>
                10 DIAS PARA SU CUMPLEAÑOS <br>
                QUE EMOCIÓN MI PRINCES PRECIOSO YA SE ACERCA EL DÍA MI NIÑA BELLA <br>
@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Lista conocida de imágenes (ajustada a los nombres reales en Photos/)
         const photos = [
+            'IMG 1.jpg', 'IMG 2.jpg', 'IMG 3.jpg', 'IMG 4.jpg', 'IMG 5.jpg',
             'photo 1.jpg','photo2.jpg','photo 3.jpg','photo 4.jpg','photo 5.jpg',
             'photo 6.jpg','photo 10.jpg','photo 11.jpg','photo 12.jpg','photo 13.jpg',
             'photo 14.jpg','photo 15.jpg','photo 16.jpg','photo 17.jpg','photo 18.jpg'
