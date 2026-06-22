@@ -49,13 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mostrar mensaje especial el 11 de junio (y también el día anterior para vista previa)
     if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 21)) {
         content.innerHTML = `
-            <h2>Día 21</h2>
+            <h2>Día 22</h2>
             <p>
-                Falltan 9 días para su cumpleaños amorcito <br>
-               Mi amor hermoso estoy muy ferliz de anunciar que ya solo faltan <br>
-               10 DIAS PARA SU CUMPLEAÑOS <br>
-               QUE EMOCIÓN MI PRINCES PRECIOSO YA SE ACERCA EL DÍA MI NIÑA BELLA <br>
-               LA AMO MUCHI MI TERRONCITO DE AZUCAR MORENA <br>
+                Falltan 8 días para su cumpleaños amorcito <br>
+               Hoy quiero decirle que gracias por siempre estar a mi lado <br>
+               A pesar de todo lo que ha pasado no ha dejado de amarma <br>
+               Gracias por tanto mi niña bella y quiero que su próximo cumpleaños sea muy especial <br>
+               LA AMO CON TODO MI SER MI PRINCESA PRECIOSA <br>
             </p>
             
 
