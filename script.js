@@ -47,11 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
 
     // Mostrar mensaje especial el 11 de junio (y también el día anterior para vista previa)
-    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 21)) {
+    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 23)) {
         content.innerHTML = `
             <h2>Día 22</h2>
             <p>
-                Falltan 8 días para su cumpleaños amorcito <br>
+                Falltan 7 días para su cumpleaños amorcito hermoso, es decir UNA SEMANA!!!! <br>
                Hoy quiero decirle que gracias por siempre estar a mi lado <br>
                A pesar de todo lo que ha pasado no ha dejado de amarma <br>
                Gracias por tanto mi niña bella y quiero que su próximo cumpleaños sea muy especial <br>
