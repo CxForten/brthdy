@@ -47,15 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
 
     // Mostrar mensaje especial el 11 de junio (y también el día anterior para vista previa)
-    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 25)) {
+    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 26)) {
         content.innerHTML = `
-            <h2>Día 25</h2>
+            <h2>Día 26</h2>
             <p>
-                Falltan 5 días para su cumpleaños amorcito hermoso <br>
-                Cada día que pasa mi amor solo crece y crece por usted <br>
-                Podría vivir 1000 vidas y en cada una de ellas la amaría con la misma intensidad <br>
-                Poquito poquito falta apra que llegue este día tan especial amor <br>
-                TE AMOOOOOOOOOOOOOOOOOOO MUCHO MUCHO MI NIÑA LINDA <br>
+                Falltan 4 días para su cumpleaños amorcito hermoso <br>
+                Ya quedan menos de 90 horas para su cumpleaños mi amor hermoso <br>
+                No puedo estar ma´s emocionado y contento de compartir este día que viene con usted <br>
+                Y ya casi estamos más y más cerca d lleagr mi niña bella <br>
+                Gracias por permitirme formar parte de su vida yt compartir su cumpleaños con usted <br>
+                LA AMOOOOOOOOOOOOOOOOOOOO MI PRINCESA PRECIOSA MI CIELITO HERMOSO MI TODO <br>                
                
             </p>
             
