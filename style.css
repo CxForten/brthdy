@@ -10,6 +10,27 @@ body{
     color:#222;
 }
 
+:root{
+    --text-bright: #ffffff;
+    --glow-soft: rgba(255,255,255,0.06);
+    --glow-strong: rgba(255,140,180,0.14);
+}
+
+/* Brillo y resplandor global */
+body{
+    color: var(--text-bright);
+}
+
+/* Aplica resplandor sutil a la mayoría de los textos */
+h1, h2, h3, p, a, button, .dot, #countdown, #giftButton, #dailyContent p{
+    text-shadow: 0 3px 18px var(--glow-soft), 0 10px 36px var(--glow-strong);
+}
+
+/* Refuerza el resplandor del título con gradiente ya existente */
+.site-loaded h1{
+    text-shadow: 0 8px 36px rgba(255,150,180,0.18), 0 3px 20px rgba(255,255,255,0.08);
+}
+
 /* PRELOADER */
 
 #preloader{
@@ -145,6 +166,8 @@ h1{
     border-radius:25px;
     font-size:2rem;
     box-shadow:0 8px 25px rgba(0,0,0,0.15);
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.06), 0 8px 24px rgba(0,0,0,0.16);
 }
 
 /* contador con pulso sutil y brillo */
@@ -180,6 +203,9 @@ h1{
 #dailyContent p{
     font-size:1.7rem;
     line-height:1.6;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.06), 0 8px 30px rgba(0,0,0,0.18);
+    font-weight:500;
 }
 
 /* Mini carrusel */
@@ -259,7 +285,7 @@ h1{
     display:none;
     margin-top:40px;
     background:#ff9eb5;
-    color:#222;
+    color:#ffffff;
     border:none;
     padding:15px 30px;
     border-radius:20px;

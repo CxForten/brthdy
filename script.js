@@ -47,16 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
 
     // Mostrar mensaje especial el 11 de junio (y también el día anterior para vista previa)
-    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 28)) {
+    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 29)) {
         content.innerHTML = `
-            <h2>Día 28</h2>
+            <h2>Día 29</h2>
             <p>
-                Falltan 2 días para su cumpleaños amorcito hermoso <br>
-                Mi niña bella, ya que solo tengo una sola vida <br>
-                Me gustaría dedicarle toda esa vida solo a amarla a usted amor <br>
-                Y si solo me quedara una noche la pasaría a su lado <br>
-                MI AMOR LA AMO MUCHO MI CASI CUMPLEAÑERA <br>
-                TE AMOOOOOOOOOO MUHCISIMO MI PRINCESA PRECIOSA <br>
+                AMOOOR MAÑANA YA ES SU CUMPLEAÑOS!!!!!! <br>
+                Fezliz de que ya esté llegando a una vuelta al sol mi amor hermoso <br>
+                Muy emocionado de que mañana ya llegué su cumpleaños y que sea el mejor cumpleaños de todo <br>
+                Y pues quiero que sea mañana para celebrar juntos mi amor lindo <br>
+                No olvide que la amo MUCHO MUCHO MI AMOR PRECIOSO <br>
+                TE AMOOOOOOOOOOOOOOOOOO MI PRINCESA PRECIOSA <br>
             </p>
             
 
