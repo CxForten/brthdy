@@ -1,66 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const targetDate = new Date("June 30, 2026 00:00:00").getTime();
+    const redirectUrl = 'http://felizcumple-nine-weld.vercel.app/';
 
-    const countdown = setInterval(() => {
+    const photos = [
+        'IMG 1.jpg', 'IMG 2.jpg', 'IMG 3.jpg', 'IMG 4.jpg', 'IMG 5.jpg',
+        'photo 1.jpg','photo2.jpg','photo 3.jpg','photo 4.jpg','photo 5.jpg',
+        'photo 6.jpg','photo 10.jpg','photo 11.jpg','photo 12.jpg','photo 13.jpg',
+        'photo 14.jpg','photo 15.jpg','photo 16.jpg','photo 17.jpg','photo 18.jpg'
+    ];
 
-    const now = new Date().getTime();
-    const distance = targetDate - now;
+    const extractNum = name => { const m = name.match(/(\d+)/); return m ? parseInt(m[0],10) : 9999; };
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24))
-        / (1000 * 60 * 60)
-    );
+    const renderCarouselContent = (title, body) => {
+        const content = document.getElementById("dailyContent");
+        if (!content) return;
 
-    const minutes = Math.floor(
-        (distance % (1000 * 60 * 60))
-        / (1000 * 60)
-    );
-
-    const seconds = Math.floor(
-        (distance % (1000 * 60))
-        / 1000
-    );
-
-    document.getElementById("countdown").innerHTML =
-        `${days} días ${hours} horas ${minutes} min ${seconds} seg`;
-
-    if(distance < 0){
-        clearInterval(countdown);
-
-        document.getElementById("countdown").innerHTML =
-            "🎉 ¡Feliz cumpleaños! 🎉";
-
-        const giftBtn = document.getElementById("giftButton");
-        if (giftBtn) {
-            giftBtn.classList.add('visible');
-            // asegurar que sea accesible
-            giftBtn.setAttribute('aria-hidden','false');
-        }
-    }
-
-    }, 1000);
-        // Generar carrusel dinámicamente a partir de una lista única de imágenes reales
-    const content = document.getElementById("dailyContent");
-
-    const today = new Date();
-
-    // Mostrar mensaje especial el 11 de junio (y también el día anterior para vista previa)
-    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 29)) {
         content.innerHTML = `
-            <h2>Día 29</h2>
-            <p>
-                AMOOOR MAÑANA YA ES SU CUMPLEAÑOS!!!!!! <br>
-                Fezliz de que ya esté llegando a una vuelta al sol mi amor hermoso <br>
-                Muy emocionado de que mañana ya llegué su cumpleaños y que sea el mejor cumpleaños de todo <br>
-                Y pues quiero que sea mañana para celebrar juntos mi amor lindo <br>
-                No olvide que la amo MUCHO MUCHO MI AMOR PRECIOSO <br>
-                TE AMOOOOOOOOOOOOOOOOOO MI PRINCESA PRECIOSA <br>
-            </p>
-            
+            <h2>${title}</h2>
+            <p>${body}</p>
 
-            
             <div class="carousel" id="miniCarousel" aria-roledescription="carousel" tabindex="0">
                 <div class="carousel-track"></div>
                 <button class="carousel-btn prev" aria-label="Anterior">‹</button>
@@ -69,39 +28,96 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        // Lista conocida de imágenes (ajustada a los nombres reales en Photos/)
-        const photos = [
-            'IMG 1.jpg', 'IMG 2.jpg', 'IMG 3.jpg', 'IMG 4.jpg', 'IMG 5.jpg',
-            'photo 1.jpg','photo2.jpg','photo 3.jpg','photo 4.jpg','photo 5.jpg',
-            'photo 6.jpg','photo 10.jpg','photo 11.jpg','photo 12.jpg','photo 13.jpg',
-            'photo 14.jpg','photo 15.jpg','photo 16.jpg','photo 17.jpg','photo 18.jpg'
-        ];
-
-        // Extraer número para ordenar de forma natural; no num -> al final
-        const extractNum = name => { const m = name.match(/(\d+)/); return m ? parseInt(m[0],10) : 9999; };
-        photos.sort((a,b)=> extractNum(a) - extractNum(b));
-
-        // Eliminar duplicados accidentalmente presentes
-        const unique = Array.from(new Set(photos));
-
+        const uniquePhotos = Array.from(new Set(photos.slice().sort((a, b) => extractNum(a) - extractNum(b))));
         const track = document.querySelector('#miniCarousel .carousel-track');
-        unique.forEach(fname => {
-            const slide = document.createElement('div');
-            slide.className = 'carousel-slide';
-            const img = document.createElement('img');
-            img.src = 'Photos/' + fname;
-            img.alt = fname.replace(/\.jpg$/i,'');
-            img.loading = 'lazy';
-            img.onerror = function(){ this.src = 'Photos/amorcito-mejorado.jpg'; };
-            slide.appendChild(img);
-            track.appendChild(slide);
-        });
 
-        if (unique.length > 0) {
+        if (track) {
+            uniquePhotos.forEach(fname => {
+                const slide = document.createElement('div');
+                slide.className = 'carousel-slide';
+                const img = document.createElement('img');
+                img.src = 'Photos/' + fname;
+                img.alt = fname.replace(/\.jpg$/i, '');
+                img.loading = 'lazy';
+                img.onerror = function(){ this.src = 'Photos/amorcito-mejorado.jpg'; };
+                slide.appendChild(img);
+                track.appendChild(slide);
+            });
+        }
+
+        if (uniquePhotos.length > 0) {
             setTimeout(initCarousel, 100);
         } else {
             console.warn('No hay imágenes para el carrusel');
         }
+    };
+
+    const showFinalState = () => {
+        document.getElementById("countdown").innerHTML = " ¡YAAAA AHORA CUMPLE AÑOS!";
+        renderCarouselContent(
+            '¡Llegó el día amor mío!',
+            ''
+        );
+
+        const giftBtn = document.getElementById("giftButton");
+        const giftLink = document.getElementById("giftLink");
+        if (giftBtn) {
+            giftBtn.textContent = 'IR A LA PÁGINA ESPECIAL';
+            giftBtn.classList.add('visible');
+            giftBtn.setAttribute('aria-hidden', 'false');
+            giftBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+                window.open(redirectUrl, '_blank', 'noopener,noreferrer');
+            });
+        }
+        if (giftLink) {
+            giftLink.setAttribute('href', redirectUrl);
+            giftLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                window.open(redirectUrl, '_blank', 'noopener,noreferrer');
+            });
+        }
+    };
+
+    const countdown = setInterval(() => {
+
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24))
+            / (1000 * 60 * 60)
+        );
+
+        const minutes = Math.floor(
+            (distance % (1000 * 60 * 60))
+            / (1000 * 60)
+        );
+
+        const seconds = Math.floor(
+            (distance % (1000 * 60))
+            / 1000
+        );
+
+        document.getElementById("countdown").innerHTML =
+            `${days} días ${hours} horas ${minutes} min ${seconds} seg`;
+
+        if (distance < 0) {
+            clearInterval(countdown);
+            showFinalState();
+        }
+
+    }, 1000);
+
+    const today = new Date();
+
+    // Mostrar mensaje especial el 11 de junio (y también el día anterior para vista previa)
+    if (today.getMonth() === 5 && (today.getDate() === 5 || today.getDate() === 29)) {
+        renderCarouselContent(
+            'Día 29',
+            'AMOOOR MAÑANA YA ES SU CUMPLEAÑOS!!!!!! <br>Fezliz de que ya esté llegando a una vuelta al sol mi amor hermoso <br>Muy emocionado de que mañana ya llegué su cumpleaños y que sea el mejor cumpleaños de todo <br>Y pues quiero que sea mañana para celebrar juntos mi amor lindo <br>No olvide que la amo MUCHO MUCHO MI AMOR PRECIOSO <br>TE AMOOOOOOOOOOOOOOOOOO MI PRINCESA PRECIOSA <br>'
+        );
     }
 
     

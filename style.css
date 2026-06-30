@@ -294,6 +294,10 @@ h1{
     transition:.3s;
 }
 
+#giftButton.visible{
+    display:inline-block;
+}
+
 #giftButton:hover{
     transform:scale(1.05);
 }
